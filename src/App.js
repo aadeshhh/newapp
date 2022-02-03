@@ -1,20 +1,31 @@
 import './App.css';
-//import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar.js';
 import Text from './components/Text.js';
 import React, { useState } from 'react';
 import Alert from './components/Alert.js';
 
-// import {
-  //BrowserRouter as Router,
-  //Switch,
-  //Route,
+ import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
  // Link
-// } from "react-router-dom"; 
+ } from "react-router-dom"; 
 
 function App() {
+
+ // const array=['hello','these','are','some','array','elements'];
+
+ // array.map((item)=>{
+ //  console.warn(item)
+ // })
+
+
  const [mode, setMode] = useState('light');
  const [alert, setAlert] = useState(null);
+ 
+ 
+
 
  const showAlert = (message, type) =>{
    setAlert({
@@ -47,22 +58,22 @@ function App() {
  }
   return (
    <>
- {/* <Router> */} 
+  <Router>  
   <Navbar title="Aadesh" mode={mode} toggleMode={toggleMode} />
  <Alert alert={alert}/> 
   <div className="container my-3" >
-  {/* <Switch>
+   <Switch>
           <Route exact path="/about">
             <About />
           </Route>
           
-  <Route exact path="/"> */} 
+  <Route exact path="/">  
           <Text showAlert={showAlert} heading="Enter your text here.." mode={mode}/> 
             
-         {/* </Route>
-        </Switch> */}
+          </Route>
+        </Switch> 
         </div>
-       {/* </Router> */}
+        </Router> 
   
   </>
   
